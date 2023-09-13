@@ -1,22 +1,25 @@
-import { Outlet, Route, Routes } from "react-router-dom";
-import { AllPosts } from "./components/auth/posts/AllPosts";
-import { NavBar } from "./components/auth/nav/NavBar";
+import { Route, Routes } from "react-router-dom";
+import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
+import { ApplicationViews } from "./views/ApplicationViews";
+import { Authorized } from "./views/Authorized";
 
 export const App = () => {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
       <Route
-        path="/"
+        path="*"
         element={
-          <>
-            <NavBar />
-            <Outlet />
-          </>
+          <Authorized>
+            <ApplicationViews />
+          </Authorized>
         }
-      >
-        <Route index element={<AllPosts />} />
-        <Route path="home" element={<AllPosts />} />
-      </Route>
+      />
     </Routes>
   );
 };
+
+export default App;

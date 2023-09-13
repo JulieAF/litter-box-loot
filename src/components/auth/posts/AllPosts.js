@@ -3,8 +3,8 @@ import { getAllPosts } from "../../../services/postService";
 import { getAllCategories } from "../../../services/categoryService";
 import "./Post.css";
 import { PostFilter } from "./PostFilter";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import { Post } from "./Post";
+import { Link } from "react-router-dom";
 
 export const AllPosts = () => {
   const [allPosts, setAllPosts] = useState([]);
@@ -39,12 +39,16 @@ export const AllPosts = () => {
       <h2>Posts</h2>
       <PostFilter
         selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectionRange}
+        setSelectedCategory={setSelectedCategory}
         allCategories={allCategories}
       />
       <article className="posts">
         {filteredPosts.map((post) => {
-          return <Post post={post} />;
+          return (
+            <Link key={post.id} to={`/posts/${post.id}`}>
+              <Post post={post} key={post.id} />
+            </Link>
+          );
         })}
       </article>
     </div>

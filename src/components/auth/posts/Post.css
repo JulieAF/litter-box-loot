@@ -57,3 +57,30 @@
 .filter-bar {
   display: flex;
 }
+
+.post:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+section.post {
+  margin: 3rem;
+}
+
+.post-header {
+  font-size: larger;
+  font-weight: 700;
+  line-height: 3rem;
+  color: var(--primary);
+}
+
+.post-footer {
+  margin: 1rem 0 0.25rem 0;
+  font-style: oblique;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}

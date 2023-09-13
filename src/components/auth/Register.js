@@ -54,7 +54,7 @@ export const Register = (props) => {
   return (
     <main className="auth-container">
       <form className="auth-form" onSubmit={handleRegister}>
-        <h1 className="header">Learning Moments</h1>
+        <h1 className="header">Litter Box Loot</h1>
         <h2>Please Register</h2>
         <fieldset className="auth-fieldset">
           <div>
@@ -77,18 +77,6 @@ export const Register = (props) => {
               id="email"
               className="auth-form-input"
               placeholder="Email address"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset className="auth-fieldset">
-          <div>
-            <input
-              onChange={updateUser}
-              type="number"
-              id="cohort"
-              className="auth-form-input"
-              placeholder="Cohort #"
               required
             />
           </div>
