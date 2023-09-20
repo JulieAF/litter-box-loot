@@ -1,45 +1,38 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getAllPosts, getPostDetails } from "../../../services/postService";
-import { getAllUsers } from "../../../services/userService";
+import { getAllPosts, getPostByUserId } from "../../../services/postService";
 import { assignOrders } from "../../../services/orderService";
 
 export const PostDetails = ({ currentUser }) => {
-  const [post, setPost] = useState({});
   const { postId } = useParams();
+  const [post, setPost] = useState({});
   const [users, setUsers] = useState([]);
-  const [postForOrders, setPostsForOrders] = useState([]);
 
   useEffect(() => {
-    getPostDetails(postId).then((data) => {
+    getPostByUserId(postId).then((data) => {
       const postObj = data[0];
       setPost(postObj);
     });
   }, [postId]);
 
-  useEffect(() => {
-    getAllPosts().then((postArr) => {
-      setPostsForOrders(postArr);
+  const getAndSetPosts = () => {
+    getAllPosts().then((postArray) => {
+      setPost(postArray);
     });
-  }, []);
-
-  useEffect(() => {
-    getAllUsers().then((usersArray) => {
-      setUsers(usersArray);
-    });
-  }, []);
+  };
 
   const handleBuy = () => {
     const currentUserLoggedIn = users.find(
       (user) => user.userId === currentUser.id
     );
+
     const newOrder = {
       userId: currentUserLoggedIn.id,
-      postId: post.id,
+      postId: post.id, //doesn't read post.id here
     };
 
     assignOrders(newOrder).then(() => {
-      console.log("poop");
+      getAndSetPosts();
     });
   };
 
@@ -54,7 +47,7 @@ export const PostDetails = ({ currentUser }) => {
       <footer>
         <div className="btn-container">
           <button className="btn btn-secondary" onClick={handleBuy}>
-            Buy
+            <Link to={`/myOrders/`}>Buy</Link>
           </button>
         </div>
       </footer>
