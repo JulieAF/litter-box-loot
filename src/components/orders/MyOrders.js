@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { getOrdersByUser } from "../../services/orderService";
+import { getAllOrders } from "../../services/orderService";
 
 export const MyOrders = ({ currentUser }) => {
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState([]);
   let [userOrders, setUserOrders] = useState([]);
 
   useEffect(() => {
-    getOrdersByUser().then((orderArray) => {
-      setOrder(orderArray);
+    getAllOrders().then((orderObj) => {
+      setOrder(orderObj);
     });
   }, []);
 
@@ -29,8 +29,8 @@ export const MyOrders = ({ currentUser }) => {
                 <header className="order-info"></header>
                 <div>{order.id}</div>
                 <footer>
-                  <div>{order.postId.title}</div>
-                  <div>{order.postId.price}</div>
+                  <div>{order.post.title}</div>
+                  <div>{order.post.price}</div>
                 </footer>
               </section>
             );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllCategories } from "../../../services/categoryService";
 import { useNavigate } from "react-router-dom";
 
-export const NewPost = () => {
+export const NewPost = ({ currentUser }) => {
   const [userChoices, setUserChoices] = useState({
     image: "",
     title: "",
@@ -27,12 +27,16 @@ export const NewPost = () => {
       userChoices.categoryId &&
       userChoices.price
     ) {
+      const userChoicesWithId = {
+        ...userChoices,
+        userId: currentUser.id,
+      };
       fetch("http://localhost:8088/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userChoices),
+        body: JSON.stringify(userChoicesWithId),
       }).then(() => {
         fetch(`http://localhost:8088/posts`).then(() => {
           navigate("/");
