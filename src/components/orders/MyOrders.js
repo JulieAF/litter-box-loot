@@ -27,7 +27,12 @@ export const MyOrders = ({ currentUser }) => {
             return (
               <section className="post" key={order.id}>
                 <header className="post-info"></header>
-                <div>{order.id}</div>
+                <img
+                  src={order.post.image}
+                  alt={order.post.name}
+                  width="150px"
+                />
+                <div>Shipped</div>
                 <div>{order.post.title}</div>
                 <div>{order.post.price}</div>
               </section>

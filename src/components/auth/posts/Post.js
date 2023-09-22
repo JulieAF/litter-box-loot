@@ -9,7 +9,10 @@ export const Post = ({ post }) => {
       <div className="post-info">
         <footer>
           <div> {post.title}</div>
-          <div>{post.price}</div>
+          <div> {post.condition}</div>
+          <div>{post.price} </div>
+          <div>Buy It Now</div>
+          <div>Free Shipping</div>
         </footer>
       </div>
     </section>

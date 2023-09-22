@@ -80,6 +80,57 @@ export const EditPost = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
+          <label>Item Condition:</label>
+          <input
+            type="text"
+            name="condition"
+            value={post.condition ? post.condition : ""}
+            required
+            onChange={(event) => {
+              const copy = { ...post };
+              copy.condition = event.target.value;
+              setPost(copy);
+            }}
+            className="form-control"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label>Price:</label>
+          <input
+            type="text"
+            name="price"
+            value={post.price ? post.price : ""}
+            required
+            onChange={(event) => {
+              const copy = { ...post };
+              copy.price = event.target.value;
+              setPost(copy);
+            }}
+            className="form-control"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label>Item Details:</label>
+          <input
+            type="text"
+            name="about"
+            value={post.about ? post.about : ""}
+            required
+            onChange={(event) => {
+              const copy = { ...post };
+              copy.about = event.target.value;
+              setPost(copy);
+            }}
+            className="form-control"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
           <div>Category:</div>
           <select
             name="categoryId"
@@ -100,23 +151,6 @@ export const EditPost = () => {
               );
             })}
           </select>
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label>Price:</label>
-          <input
-            type="text"
-            name="price"
-            value={post.price ? post.price : ""}
-            required
-            onChange={(event) => {
-              const copy = { ...post };
-              copy.price = event.target.value;
-              setPost(copy);
-            }}
-            className="form-control"
-          />
         </div>
       </fieldset>
       <fieldset>

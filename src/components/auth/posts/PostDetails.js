@@ -42,14 +42,16 @@ export const PostDetails = ({ currentUser }) => {
       </header>
       <div className="post-info">
         <div>{post.title}</div>
-        <div>{post.category?.name}</div>
-        <div>{post.price}</div>
-        <div>{post.user?.name}</div>
+        <div>Condition: {post.condition}</div>
+        <div>Price: {post.price}</div>
+        <div>Seller: {post.user?.name}</div>
+        <div>Item Specifics: {post.about}</div>
+        <div>Shipping: Free Economy Shipping</div>
       </div>
       <footer>
         <div className="btn-container">
           {post.user?.id !== currentUser.id && (
-            <button onClick={handleBuy}>Buy</button>
+            <button onClick={handleBuy}>Buy It Now</button>
           )}
         </div>
       </footer>
