@@ -42,7 +42,7 @@ export const EditPost = () => {
   };
 
   return (
-    <form className="post">
+    <form className="editPost">
       <h2>Update Post</h2>
       <fieldset>
         <div className="form-group">

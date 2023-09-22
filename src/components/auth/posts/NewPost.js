@@ -49,7 +49,7 @@ export const NewPost = ({ currentUser }) => {
   };
 
   return (
-    <form>
+    <form className="needName">
       <h2>Add a Post</h2>
       <fieldset>
         <div className="form-group">
@@ -91,6 +91,7 @@ export const NewPost = ({ currentUser }) => {
         <div className="form-group">
           <div>Category: </div>
           <select
+            className="category-select"
             value={userChoices.categoryId}
             onChange={(event) => {
               const copy = { ...userChoices };

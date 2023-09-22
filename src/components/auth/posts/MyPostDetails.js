@@ -22,7 +22,7 @@ export const MyPostDetails = () => {
   };
 
   return (
-    <section className="post">
+    <section className="myPost">
       <div>
         <img src={post.image} alt={post.name} width="400px"></img>
       </div>
@@ -49,9 +49,11 @@ export const MyPostDetails = () => {
           </Link>
         </button>
       </div>
-      <button className="form-btn" onClick={handleDelete}>
-        Delete
-      </button>
+      <div className="form-group">
+        <button className="form-btn" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
     </section>
   );
 };
