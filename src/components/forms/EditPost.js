@@ -46,7 +46,7 @@ export const EditPost = () => {
       <h2>Update Post</h2>
       <fieldset>
         <div className="form-group">
-          <label>image:</label>
+          <label>Image URL:</label>
           <input
             type="text"
             name="image"
@@ -121,7 +121,7 @@ export const EditPost = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <button className="form-btn btn-primary" onClick={handleSave}>
+          <button className="form-btn" onClick={handleSave}>
             Save Post
           </button>
         </div>

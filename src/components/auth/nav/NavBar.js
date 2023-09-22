@@ -7,20 +7,29 @@ export const NavBar = () => {
   return (
     <ul className="navbar">
       <li className="navbar-item">
-        <Link to="/home">Home</Link>
+        <Link className="navbar-link" to="/home">
+          Litter Box Loot
+        </Link>
       </li>
       <li className="navbar-item">
-        <Link to="/myPosts">My Posts</Link>
+        <Link className="navbar-link" to="/myPosts">
+          My Posts
+        </Link>
       </li>
       <li className="navbar-item">
-        <Link to="/myOrders">My Orders</Link>
+        <Link className="navbar-link" to="/myOrders">
+          My Orders
+        </Link>
       </li>
       <li className="navbar-item">
-        <Link to="/newPost">New Post</Link>
+        <Link className="navbar-link" to="/newPost">
+          New Post
+        </Link>
       </li>
       {localStorage.getItem("learning_user") ? (
         <li>
           <Link
+            className="navbar-link"
             to=""
             onClick={() => {
               localStorage.removeItem("learning_user");

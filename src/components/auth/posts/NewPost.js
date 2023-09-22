@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../../../services/categoryService";
 import { useNavigate } from "react-router-dom";
+import "./Post.css";
 
 export const NewPost = ({ currentUser }) => {
   const [userChoices, setUserChoices] = useState({
@@ -48,8 +49,8 @@ export const NewPost = ({ currentUser }) => {
   };
 
   return (
-    <form className="post-form">
-      <h2 className="post-form-title">Add a Post</h2>
+    <form>
+      <h2>Add a Post</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="image">image: </label>
@@ -58,7 +59,7 @@ export const NewPost = ({ currentUser }) => {
             id="image"
             type="text"
             className="form-control"
-            placeholder="Image URL"
+            placeholder="Image Url"
             value={userChoices.image}
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -127,7 +128,7 @@ export const NewPost = ({ currentUser }) => {
         </div>
       </fieldset>
       <button
-        className="btn"
+        className=""
         onClick={(event) => {
           handleSave(event);
         }}

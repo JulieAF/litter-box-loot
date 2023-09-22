@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { deletePost, getPostByPostId } from "../../../services/postService";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import "./Post.css";
 
 export const MyPostDetails = () => {
   const { postId } = useParams();
@@ -22,10 +23,8 @@ export const MyPostDetails = () => {
 
   return (
     <section className="post">
-      <header className="post-header">{post.id}</header>
       <div>
-        <span className="post-info">Image : </span>
-        {post.image}
+        <img src={post.image} alt={post.name} width="400px"></img>
       </div>
       <div>
         <span className="post-info">Title : </span>
@@ -44,13 +43,13 @@ export const MyPostDetails = () => {
         {post.price}
       </div>
       <div className="form-group">
-        <button className="form-btn btn-primary">
+        <button className="form-btn">
           <Link post={post} key={post.id} to={`/myPosts/${post.id}/${post.id}`}>
             Edit Post
           </Link>
         </button>
       </div>
-      <button className="form-btn btn-primary" onClick={handleDelete}>
+      <button className="form-btn" onClick={handleDelete}>
         Delete
       </button>
     </section>

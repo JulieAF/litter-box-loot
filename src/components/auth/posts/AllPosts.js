@@ -35,14 +35,14 @@ export const AllPosts = () => {
   }, [selectedCategory, allPosts]);
 
   return (
-    <div className="posts-container">
-      <h2>Posts</h2>
+    <>
+      <h2 className="page-title">Litter Box Loot</h2>
       <PostFilter
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
         allCategories={allCategories}
       />
-      <article className="posts">
+      <article className="posts-container">
         {filteredPosts.map((post) => {
           return (
             <Link key={post.id} to={`/posts/${post.id}`}>
@@ -51,6 +51,6 @@ export const AllPosts = () => {
           );
         })}
       </article>
-    </div>
+    </>
   );
 };
