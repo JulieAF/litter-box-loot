@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../../../services/categoryService";
 import { useNavigate } from "react-router-dom";
+import "./Post.css";
 
-export const NewPost = () => {
+export const NewPost = ({ currentUser }) => {
   const [userChoices, setUserChoices] = useState({
     image: "",
     title: "",
@@ -27,12 +28,16 @@ export const NewPost = () => {
       userChoices.categoryId &&
       userChoices.price
     ) {
+      const userChoicesWithId = {
+        ...userChoices,
+        userId: currentUser.id,
+      };
       fetch("http://localhost:8088/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userChoices),
+        body: JSON.stringify(userChoicesWithId),
       }).then(() => {
         fetch(`http://localhost:8088/posts`).then(() => {
           navigate("/");
@@ -44,8 +49,8 @@ export const NewPost = () => {
   };
 
   return (
-    <form className="post-form">
-      <h2 className="post-form-title">Add a Post</h2>
+    <form className="needName">
+      <h2>Add a Post</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="image">image: </label>
@@ -54,7 +59,7 @@ export const NewPost = () => {
             id="image"
             type="text"
             className="form-control"
-            placeholder="Image URL"
+            placeholder="Image Url"
             value={userChoices.image}
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -86,6 +91,7 @@ export const NewPost = () => {
         <div className="form-group">
           <div>Category: </div>
           <select
+            className="category-select"
             value={userChoices.categoryId}
             onChange={(event) => {
               const copy = { ...userChoices };
@@ -123,7 +129,7 @@ export const NewPost = () => {
         </div>
       </fieldset>
       <button
-        className="btn"
+        className=""
         onClick={(event) => {
           handleSave(event);
         }}

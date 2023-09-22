@@ -1,3 +1,5 @@
+import "./Post.css";
+
 export const PostFilter = ({
   selectedCategory,
   setSelectedCategory,

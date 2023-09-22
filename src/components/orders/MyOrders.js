@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { getOrdersByUser } from "../../services/orderService";
+import { getAllOrders } from "../../services/orderService";
 
 export const MyOrders = ({ currentUser }) => {
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState([]);
   let [userOrders, setUserOrders] = useState([]);
 
   useEffect(() => {
-    getOrdersByUser().then((orderArray) => {
-      setOrder(orderArray);
+    getAllOrders().then((orderObj) => {
+      setOrder(orderObj);
     });
   }, []);
 
@@ -20,18 +20,16 @@ export const MyOrders = ({ currentUser }) => {
 
   return (
     <>
-      <div className="orders-container">
-        <h2>Orders</h2>
-        <article className="orders">
+      <div className="posts-container">
+        <h2 className="page-title">Litter Box Loot</h2>
+        <article className="posts">
           {userOrders.map((order) => {
             return (
-              <section className="order" key={order.id}>
-                <header className="order-info"></header>
+              <section className="post" key={order.id}>
+                <header className="post-info"></header>
                 <div>{order.id}</div>
-                <footer>
-                  <div>{order.postId.title}</div>
-                  <div>{order.postId.price}</div>
-                </footer>
+                <div>{order.post.title}</div>
+                <div>{order.post.price}</div>
               </section>
             );
           })}
