@@ -8,6 +8,8 @@ import { NewPost } from "../components/auth/posts/NewPost";
 import { MyOrders } from "../components/orders/MyOrders";
 import { EditPost } from "../components/forms/EditPost";
 import { MyPostDetails } from "../components/auth/posts/MyPostDetails";
+import { MyProfiles } from "../components/profiles/MyProfiles";
+import { SellerDetails } from "../components/auth/posts/SellerDetails";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -36,8 +38,8 @@ export const ApplicationViews = () => {
           path="myOrders"
           element={<MyOrders currentUser={currentUser} />}
         />
-        <Route path="myPosts" element={<Outlet />}>
-          <Route index element={<MyPosts currentUser={currentUser} />} />
+        <Route path="myProfile" element={<Outlet />}>
+          <Route index element={<MyProfiles currentUser={currentUser} />} />
           <Route path=":postId" element={<Outlet />}>
             <Route index element={<MyPostDetails />} />
             <Route path=":editPost" element={<EditPost />} />
@@ -45,10 +47,10 @@ export const ApplicationViews = () => {
         </Route>
         <Route path="posts">
           <Route index element={<AllPosts />} />
-          <Route
-            path=":postId"
-            element={<PostDetails currentUser={currentUser} />}
-          />
+          <Route path=":postId" element={<Outlet />}>
+            <Route index element={<PostDetails currentUser={currentUser} />} />
+            <Route path=":userId" element={<SellerDetails />} />
+          </Route>
         </Route>
       </Route>
       ;

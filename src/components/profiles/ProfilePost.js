@@ -1,6 +1,6 @@
-import "./Post.css";
+import "./Profile.css";
 
-export const Post = ({ post }) => {
+export const ProfilePost = ({ post }) => {
   return (
     <section className="post" key={post.id}>
       <header>

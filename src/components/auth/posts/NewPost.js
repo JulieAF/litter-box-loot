@@ -89,6 +89,59 @@ export const NewPost = ({ currentUser }) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
+          <label htmlFor="condition">Item Condition:</label>
+          <input
+            required
+            id="condition"
+            type="text"
+            className="form-control"
+            placeholder=""
+            value={userChoices.condition}
+            onChange={(event) => {
+              const copy = { ...userChoices };
+              copy.condition = event.target.value;
+              setUserChoices(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="price">Price: </label>
+          <input
+            required
+            id="price"
+            type="text"
+            className="form-control"
+            placeholder=""
+            value={userChoices.price}
+            onChange={(event) => {
+              const copy = { ...userChoices };
+              copy.price = event.target.value;
+              setUserChoices(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="about">Item Details:</label>
+          <input
+            required
+            id="about"
+            type="text"
+            className="form-control"
+            value={userChoices.about}
+            onChange={(event) => {
+              const copy = { ...userChoices };
+              copy.about = event.target.value;
+              setUserChoices(copy);
+            }}
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <div className="form-group">
           <div>Category: </div>
           <select
             className="category-select"
@@ -108,24 +161,6 @@ export const NewPost = ({ currentUser }) => {
               );
             })}
           </select>
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="price">Price: </label>
-          <input
-            required
-            id="price"
-            type="text"
-            className="form-control"
-            placeholder=""
-            value={userChoices.price}
-            onChange={(event) => {
-              const copy = { ...userChoices };
-              copy.price = event.target.value;
-              setUserChoices(copy);
-            }}
-          />
         </div>
       </fieldset>
       <button

@@ -21,19 +21,17 @@ export const MyPosts = ({ currentUser }) => {
 
   return (
     <>
-      <div className="background">
-        <div className="posts-container">
-          <h2 className="page-title">Litter Box Loot</h2>
-          <article className="posts">
-            {userPosts.map((post) => {
-              return (
-                <Link key={post.id} to={`/myPosts/${post.id}`}>
-                  <Post post={post} key={post.id} />
-                </Link>
-              );
-            })}
-          </article>
-        </div>
+      <div className="posts-container">
+        <h2 className="page-title">Litter Box Loot</h2>
+        <article className="posts">
+          {userPosts.map((post) => {
+            return (
+              <Link key={post.id} to={`/myPosts/${post.id}`}>
+                <Post post={post} key={post.id} />
+              </Link>
+            );
+          })}
+        </article>
       </div>
     </>
   );
