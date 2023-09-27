@@ -37,7 +37,7 @@ export const EditPost = () => {
     };
 
     editedPost(updatedPost).then(() => {
-      navigate(`/myPosts`);
+      navigate(`/myProfile`);
     });
   };
 

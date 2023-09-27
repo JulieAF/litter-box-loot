@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPostByPostId } from "../../../services/postService";
 import { getAllUsers } from "../../../services/userService";
@@ -44,7 +44,9 @@ export const PostDetails = ({ currentUser }) => {
         <div>{post.title}</div>
         <div>Condition: {post.condition}</div>
         <div>Price: {post.price}</div>
-        <div>Seller: {post.user?.name}</div>
+        <Link key={post.id} to={`/posts/${post.id}/${post.user?.id}`}>
+          <div>Seller: {post.user?.name}</div>
+        </Link>
         <div>Item Specifics: {post.about}</div>
         <div>Shipping: Free Economy Shipping</div>
       </div>

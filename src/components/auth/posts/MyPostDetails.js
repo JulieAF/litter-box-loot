@@ -17,7 +17,7 @@ export const MyPostDetails = () => {
 
   const handleDelete = () => {
     deletePost(postId).then(() => {
-      navigate(`/myPosts`);
+      navigate(`/myProfile`);
     });
   };
 
@@ -44,7 +44,11 @@ export const MyPostDetails = () => {
       </div>
       <div className="form-group">
         <button className="form-btn">
-          <Link post={post} key={post.id} to={`/myPosts/${post.id}/${post.id}`}>
+          <Link
+            post={post}
+            key={post.id}
+            to={`/myProfile/${post.id}/${post.id}`}
+          >
             Edit Post
           </Link>
         </button>
