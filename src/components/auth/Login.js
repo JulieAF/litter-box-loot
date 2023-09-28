@@ -32,8 +32,8 @@ export const Login = () => {
     <main className="auth-container">
       <section>
         <form className="auth-form" onSubmit={handleLogin}>
-          <h1 className="header">Litter Box Loot</h1>
-          <h2>Please sign in</h2>
+          <h1 className="page-title">Litter Box Loot</h1>
+          <h2 className="page-sub-title">Please sign in</h2>
           <fieldset className="auth-fieldset">
             <div>
               <input
@@ -49,7 +49,9 @@ export const Login = () => {
           </fieldset>
           <fieldset className="auth-fieldset">
             <div>
-              <button type="submit">Sign in</button>
+              <button className="form-btn" type="submit">
+                Sign in
+              </button>
             </div>
           </fieldset>
         </form>

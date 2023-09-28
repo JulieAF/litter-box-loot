@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllOrders } from "../../services/orderService";
-
+import "./MyOrders.css";
 export const MyOrders = ({ currentUser }) => {
   const [order, setOrder] = useState([]);
   let [userOrders, setUserOrders] = useState([]);
@@ -20,25 +20,27 @@ export const MyOrders = ({ currentUser }) => {
 
   return (
     <>
-      <div className="posts-container">
-        <h2 className="page-title">Litter Box Loot</h2>
-        <article className="posts">
-          {userOrders.map((order) => {
-            return (
-              <section className="post" key={order.id}>
-                <header className="post-info"></header>
+      <h2 className="page-title">Litter Box Loot</h2>
+      <div className="order-container">
+        <h2 className="page-sub-title">My Orders</h2>
+        {userOrders.map((order) => {
+          return (
+            <section className="order" key={order.id}>
+              <div className="order-image">
                 <img
                   src={order.post.image}
                   alt={order.post.name}
-                  width="150px"
+                  width="280px"
                 />
-                <div>Shipped</div>
-                <div>{order.post.title}</div>
+              </div>
+              <div className="order-info">
+                <h2>{order.post.title}</h2>
                 <div>{order.post.price}</div>
-              </section>
-            );
-          })}
-        </article>
+                <div>Shipped</div>
+              </div>
+            </section>
+          );
+        })}
       </div>
     </>
   );

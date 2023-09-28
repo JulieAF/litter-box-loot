@@ -6,7 +6,7 @@ export const PostFilter = ({
   allCategories,
 }) => {
   return (
-    <article className="posts">
+    <article className="category-select-container">
       <select
         className="category-select"
         id="category"
