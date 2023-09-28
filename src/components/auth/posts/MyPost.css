@@ -1,0 +1,90 @@
+.my-post-details {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 2px 5px lightgray;
+  background-color: var(--offWhite);
+  max-height: 600px;
+  width: 1500px;
+  justify-content: space-between;
+}
+
+.my-post-details-image {
+  align-self: center;
+  padding: 40px;
+}
+
+.my-post-details-info {
+  font-family: "Roboto", sans-serif;
+  color: rgb(79, 17, 146);
+  flex-direction: column;
+  width: 700px;
+  padding: 30px;
+  line-height: 2rem;
+}
+
+.btn-container {
+  padding: 30px;
+  align-self: center;
+}
+
+.my-btn-container {
+  padding: 30px;
+  align-self: flex-end;
+}
+.my-btn-1 {
+  display: inline-block;
+  padding: 0.5em 2.3em;
+  border: 0.16em solid #ffffff;
+  margin: 0 0.3em 0.5em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: rgb(79, 17, 146);
+  text-align: center;
+  transition: all 0.15s;
+}
+.my-btn-1:hover {
+  color: rgba(158, 55, 154, 0.6);
+  border-color: #dddddd;
+}
+.my-btn-1:active {
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+@media all and (max-width: 30em) {
+  .my-btn-1 {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
+.my-btn-2 {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ffffff;
+  margin: 0 0.3em 0.5em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: rgba(158, 55, 154, 0.6);
+  text-align: center;
+  transition: all 0.15s;
+}
+.my-btn-2:hover {
+  color: rgb(79, 17, 146);
+  border-color: #dddddd;
+}
+.my-btn-2:active {
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+@media all and (max-width: 30em) {
+  .my-btn-2 {
+    display: block;
+    margin: 0.4em auto;
+  }
+}

@@ -1,9 +1,9 @@
-import { Link, useParams } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProfileByUser } from "../../../services/profilesService";
-import { getAllPosts, getPostByUserId } from "../../../services/postService";
+import { getPostByUserId } from "../../../services/postService";
 import { Post } from "./Post";
+import "./Seller.css";
 
 export const SellerDetails = () => {
   const { userId } = useParams();
@@ -25,43 +25,41 @@ export const SellerDetails = () => {
 
   return (
     <>
-      <div className="posts-container">
-        <h2 className="page-title">Litter Box Loot</h2>
-        <article className="posts">
-          <section className="post" key={sellerProfile?.id}>
-            <header>
-              <img
-                src={
-                  sellerProfile?.profiles
-                    ? sellerProfile.profiles[0].image
-                    : "None"
-                }
-                alt={sellerProfile?.name}
-                width="400px"
-              ></img>
-            </header>
-            <div className="post-info">
-              <footer>
-                <div> Name: {sellerProfile?.name}</div>
-                <div> Email: {sellerProfile?.email}</div>
-                <div>
-                  About:
-                  {sellerProfile?.profiles
-                    ? sellerProfile.profiles[0].aboutMe
-                    : "None"}
-                </div>
-              </footer>
+      <h2 className="page-title">Litter Box Loot</h2>
+      <div className="profile-container">
+        <section className="profile" key={sellerProfile?.id}>
+          <div className="profile-image">
+            <img
+              src={
+                sellerProfile?.profiles
+                  ? sellerProfile.profiles[0].image
+                  : "None"
+              }
+              alt={sellerProfile?.name}
+              width="400px"
+            ></img>
+          </div>
+          <div className="profile-info">
+            <div> Name: {sellerProfile?.name}</div>
+            <div> Email: {sellerProfile?.email}</div>
+            <div>
+              About:{" "}
+              {sellerProfile?.profiles
+                ? sellerProfile.profiles[0].aboutMe
+                : "None"}
             </div>
-          </section>
-        </article>
+          </div>
+        </section>
       </div>
-      <div className="posts-container">
-        <h2 className="page-title">My Posts</h2>
-        <article className="posts">
-          {post.map((post) => {
-            return <Post post={post} key={post.id} />;
-          })}
-        </article>
+      <h2 className="page-sub-title">My Posts</h2>
+      <div className="seller-post-container">
+        <div className="seller-post">
+          <div className="seller-post-info">
+            {post.map((post) => {
+              return <Post post={post} key={post.id} />;
+            })}
+          </div>
+        </div>
       </div>
     </>
   );

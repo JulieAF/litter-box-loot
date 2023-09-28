@@ -1,0 +1,39 @@
+.post-details-container {
+  margin: 1rem 5rem 0rem 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.post-details {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 2px 5px lightgray;
+  background-color: var(--offWhite);
+  max-height: 600px;
+  width: 1500px;
+  justify-content: space-between;
+}
+
+.post-details-image {
+  align-self: center;
+  padding: 40px;
+}
+
+.post-details-info {
+  font-family: "Roboto", sans-serif;
+  color: rgb(79, 17, 146);
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding: 30px;
+}
+
+.seller:hover {
+  color: rgb(158, 100, 215);
+}
+
+.my-post-details-container {
+  margin: 1rem 5rem 0rem 5rem;
+  display: flex;
+  justify-content: center;
+}

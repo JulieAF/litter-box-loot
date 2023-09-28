@@ -1,3 +1,19 @@
+.page-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  color: rgba(158, 55, 154, 0.6);
+  text-shadow: 0px 0px 6px rgb(255, 255, 255);
+}
+
+.page-sub-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  color: rgba(158, 55, 154, 0.6);
+  text-shadow: 0px 0px 6px rgb(255, 255, 255);
+}
+
 .form-container {
   margin: 1rem 5rem 0rem 5rem;
   display: flex;
@@ -17,7 +33,6 @@ form {
   background-color: var(--offWhite);
   width: 600px;
   max-height: 800px;
-  border: dotted black;
 }
 
 fieldset {

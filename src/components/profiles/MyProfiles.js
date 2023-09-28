@@ -37,37 +37,35 @@ export const MyProfiles = ({ currentUser }) => {
 
   return (
     <>
-      <div className="posts-container">
-        <h2 className="page-title">Litter Box Loot</h2>
-        <article className="posts">
-          {userProfile.map((profile) => {
-            return (
-              <section className="post" key={profile.id}>
-                <header>
-                  <img
-                    src={profile.image}
-                    alt={profile.name}
-                    width="400px"
-                  ></img>
-                </header>
-                <div className="post-info">
-                  <footer>
-                    <div> Name: {profile.user.name}</div>
-                    <div> Email: {profile.user.email}</div>
-                    <div>About: {profile.aboutMe} </div>
-                  </footer>
-                </div>
-              </section>
-            );
-          })}
-        </article>
+      <h2 className="page-title">Litter Box Loot</h2>
+      <div className="profile-container">
+        {userProfile.map((profile) => {
+          return (
+            <section className="profile" key={profile.id}>
+              <div className="profile-image">
+                <img src={profile.image} alt={profile.name} width="400px"></img>
+              </div>
+              <div className="profile-info">
+                <footer>
+                  <div> Name: {profile.user.name}</div>
+                  <div> Email: {profile.user.email}</div>
+                  <div>About: {profile.aboutMe} </div>
+                </footer>
+              </div>
+            </section>
+          );
+        })}
       </div>
-      <div className="posts-container">
-        <h2 className="page-title">My Posts</h2>
-        <article className="posts">
+      <h2 className="page-sub-title">My Posts</h2>
+      <div className="post-container">
+        <article className="post">
           {userPosts.map((post) => {
             return (
-              <Link key={post.id} to={`/myProfile/${post.id}`}>
+              <Link
+                style={{ textDecoration: "none" }}
+                key={post.id}
+                to={`/myProfile/${post.id}`}
+              >
                 <ProfilePost post={post} key={post.id} />
               </Link>
             );

@@ -37,19 +37,25 @@ export const AllPosts = () => {
   return (
     <>
       <h2 className="page-title">Litter Box Loot</h2>
-      <PostFilter
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        allCategories={allCategories}
-      />
       <article className="posts-container">
-        {filteredPosts.map((post) => {
-          return (
-            <Link key={post.id} to={`/posts/${post.id}`}>
-              <Post post={post} key={post.id} />
-            </Link>
-          );
-        })}
+        <div className="posts">
+          <PostFilter
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            allCategories={allCategories}
+          />
+          {filteredPosts.map((post) => {
+            return (
+              <Link
+                key={post.id}
+                style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
+                to={`/posts/${post.id}`}
+              >
+                <Post post={post} key={post.id} />
+              </Link>
+            );
+          })}
+        </div>
       </article>
     </>
   );
