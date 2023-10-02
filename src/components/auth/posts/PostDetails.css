@@ -26,6 +26,7 @@
   flex-direction: column;
   width: 700px;
   padding: 30px;
+  line-height: 2em;
 }
 
 .seller:hover {

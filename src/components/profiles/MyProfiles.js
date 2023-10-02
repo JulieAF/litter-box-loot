@@ -58,9 +58,9 @@ export const MyProfiles = ({ currentUser }) => {
       </div>
       <h2 className="page-sub-title">My Posts</h2>
       <div className="post-container">
-        <article className="post">
-          {userPosts.map((post) => {
-            return (
+        {userPosts.map((post) => {
+          return (
+            <div className="post" key={post.id}>
               <Link
                 style={{ textDecoration: "none" }}
                 key={post.id}
@@ -68,9 +68,9 @@ export const MyProfiles = ({ currentUser }) => {
               >
                 <ProfilePost post={post} key={post.id} />
               </Link>
-            );
-          })}
-        </article>
+            </div>
+          );
+        })}
       </div>
     </>
   );

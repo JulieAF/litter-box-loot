@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProfileByUser } from "../../../services/profilesService";
 import { getPostByUserId } from "../../../services/postService";
@@ -56,7 +56,15 @@ export const SellerDetails = () => {
         <div className="seller-post">
           <div className="seller-post-info">
             {post.map((post) => {
-              return <Post post={post} key={post.id} />;
+              return (
+                <Link
+                  style={{ textDecoration: "none" }}
+                  key={post.id}
+                  to={`/posts/${post.id}`}
+                >
+                  <Post post={post} key={post.id} />
+                </Link>
+              );
             })}
           </div>
         </div>
