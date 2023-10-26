@@ -31,11 +31,18 @@ export const MyPostDetails = () => {
           </div>
           <div className="my-post-details-info">
             <h2>Title: {post.title}</h2>
-            <div>Seller: {post.user?.name}</div>
-            <div>Category: {post.category?.name}</div>
+            <div>Condition: {post.condition}</div>
             <h2>Price: {post.price}</h2>
-            <div>Buy It Now</div>
-            <div>Free Shipping</div>
+            <Link
+              style={{ textDecoration: "none", color: "rgb(79, 17, 146)" }}
+              post={post}
+              key={post.id}
+              to={`/myProfile`}
+            >
+              <div className="seller">Seller: {post.user?.name}</div>
+            </Link>
+            <div>Item Specifics: {post.about}</div>
+            <div>Shipping: Free Economy Shipping</div>
           </div>
           <div className="my-btn-container">
             <button className="my-btn-1">

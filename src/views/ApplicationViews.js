@@ -3,7 +3,6 @@ import { NavBar } from "../components/auth/nav/NavBar";
 import { AllPosts } from "../components/auth/posts/AllPosts";
 import { PostDetails } from "../components/auth/posts/PostDetails";
 import { useEffect, useState } from "react";
-import { MyPosts } from "../components/auth/posts/MyPosts";
 import { NewPost } from "../components/auth/posts/NewPost";
 import { MyOrders } from "../components/orders/MyOrders";
 import { EditPost } from "../components/forms/EditPost";

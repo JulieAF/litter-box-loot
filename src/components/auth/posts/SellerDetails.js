@@ -31,10 +31,14 @@ export const SellerDetails = () => {
           <div className="profile-image">
             <img
               src={
-                sellerProfile?.profiles
-                  ? sellerProfile.profiles[0].image
-                  : "None"
+                sellerProfile?.profiles?.image ||
+                "https://www.creativefabrica.com/wp-content/uploads/2023/03/16/Kawaii-Cat-Profile-With-Flower-64532988-1.png"
               }
+              onError={(e) => {
+                e.target.onerror = null; // Prevents looping
+                e.target.src =
+                  "https://www.creativefabrica.com/wp-content/uploads/2023/03/16/Kawaii-Cat-Profile-With-Flower-64532988-1.png";
+              }}
               alt={sellerProfile?.name}
               width="400px"
             ></img>
@@ -44,9 +48,8 @@ export const SellerDetails = () => {
             <div> Email: {sellerProfile?.email}</div>
             <div>
               About:{" "}
-              {sellerProfile?.profiles
-                ? sellerProfile.profiles[0].aboutMe
-                : "None"}
+              {sellerProfile?.profiles?.aboutMe ||
+                "Hi! I'm new to Litter Box Loot."}
             </div>
           </div>
         </section>
