@@ -7,8 +7,10 @@ export const NewPost = ({ currentUser }) => {
   const [userChoices, setUserChoices] = useState({
     image: "",
     title: "",
+    condition: "",
     categoryId: 0,
     price: "",
+    about: "",
   });
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -63,7 +65,7 @@ export const NewPost = ({ currentUser }) => {
                 type="text"
                 className="form-control"
                 placeholder="Image Url"
-                value={userChoices.image}
+                value={userChoices.image ? userChoices.image : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.image = event.target.value;
@@ -81,7 +83,7 @@ export const NewPost = ({ currentUser }) => {
                 type="text"
                 className="form-control"
                 placeholder=""
-                value={userChoices.title}
+                value={userChoices.title ? userChoices.title : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.title = event.target.value;
@@ -99,7 +101,7 @@ export const NewPost = ({ currentUser }) => {
                 type="text"
                 className="form-control"
                 placeholder=""
-                value={userChoices.condition}
+                value={userChoices.condition ? userChoices.condition : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.condition = event.target.value;
@@ -117,7 +119,7 @@ export const NewPost = ({ currentUser }) => {
                 type="text"
                 className="form-control"
                 placeholder=""
-                value={userChoices.price}
+                value={userChoices.price ? userChoices.price : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.price = event.target.value;
@@ -134,7 +136,7 @@ export const NewPost = ({ currentUser }) => {
                 id="about"
                 type="text"
                 className="form-control"
-                value={userChoices.about}
+                value={userChoices.about ? userChoices.about : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.about = event.target.value;
@@ -148,7 +150,7 @@ export const NewPost = ({ currentUser }) => {
               <div>Category: </div>
               <select
                 className="form-category-select"
-                value={userChoices.categoryId}
+                value={userChoices.categoryId ? userChoices.categoryId : ""}
                 onChange={(event) => {
                   const copy = { ...userChoices };
                   copy.categoryId = parseInt(event.target.value);

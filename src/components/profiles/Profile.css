@@ -125,3 +125,7 @@
     margin: 0.4em auto;
   }
 }
+
+.seller:hover {
+  color: rgb(158, 100, 215);
+}

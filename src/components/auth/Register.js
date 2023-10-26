@@ -7,14 +7,12 @@ export const Register = (props) => {
   const [user, setUser] = useState({
     email: "",
     name: "",
-    cohort: 0,
   });
   let navigate = useNavigate();
 
   const registerNewUser = () => {
     const newUser = {
       ...user,
-      cohort: parseInt(user.cohort),
     };
 
     createUser(newUser).then((createdUser) => {
@@ -23,7 +21,6 @@ export const Register = (props) => {
           "learning_user",
           JSON.stringify({
             id: createdUser.id,
-            staff: createdUser.isStaff,
           })
         );
 
