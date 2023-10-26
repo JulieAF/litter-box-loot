@@ -12,7 +12,7 @@ I built this application in two weeks initially, using React Hooks and CSS for s
 
 <p>
 • Users can search for items they are interested in buying.<br>
-• Users can Buy items. <br>• Users can post items they wish to sell.<br>• Users can edit their own items.<br>• Users can delete their own items.<br>• Users view their own profile.<br>• Users view other seller's own profiles.
+• Users can buy items. <br>• Users can post items they wish to sell.<br>• Users can edit their own items.<br>• Users can delete their own items.<br>• Users view their own profile.<br>• Users view other seller's own profiles.
 </p>
 
 ### Technologies Used
