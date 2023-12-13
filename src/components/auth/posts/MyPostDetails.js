@@ -4,19 +4,28 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import "./MyPost.css";
 
 export const MyPostDetails = () => {
+  // extracting the postId parameter from the current URL
   const { postId } = useParams();
+  // create a state variable post and a function setPost to update it
   const [post, setPost] = useState({});
+  // uses the useNavigate hook to create a navigate function
   const navigate = useNavigate();
 
   useEffect(() => {
+    //calling function getPostByPostId which returns a Promise. .then() handles the response when the Promise resolves. The data parameter contains the response from the network request.
     getPostByPostId(postId).then((data) => {
+      //  extracts the first item from the data array and assigns it to a new variable postObj
       const postObj = data[0];
+      // updates the state of the component with the post object fetched from the API
       setPost(postObj);
     });
+    // will only re-run if the values in this array change
   }, [postId]);
 
   const handleDelete = () => {
+    //calls deletePost function with argument of postId which returns a promise
     deletePost(postId).then(() => {
+      // navigate is invoked inside of the .then callback function which navigates to the /myProfile route
       navigate(`/myProfile`);
     });
   };

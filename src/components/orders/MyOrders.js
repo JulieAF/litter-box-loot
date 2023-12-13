@@ -5,17 +5,24 @@ export const MyOrders = ({ currentUser }) => {
   const [order, setOrder] = useState([]);
   let [userOrders, setUserOrders] = useState([]);
 
+  //fetches and sets orders
   useEffect(() => {
-    getAllOrders().then((orderObj) => {
-      setOrder(orderObj);
+    //getAllOrders function returns a promise that resolves in an array
+    getAllOrders().then((orderArr) => {
+      //setOrder updates the state with the orderArr
+      setOrder(orderArr);
     });
   }, []);
 
   useEffect(() => {
+    // using the filter method to create a new array (foundOrders) that contains only the orders that belong to the current user
     const foundOrders = order.filter(
+      // tests whether the userId property of an order matches the id of the currentUser
       (order) => order.userId === currentUser.id
     );
+    // updates userOrders with the new array of orders (foundOrders)
     setUserOrders(foundOrders);
+    // will re-run whenever the order array or the currentUser object changes
   }, [order, currentUser]);
 
   return (
