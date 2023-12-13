@@ -14,13 +14,17 @@ export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
+    // retrieves the user object from local storage using the getItem method, key: "learning_user"
     const localLearningUser = localStorage.getItem("learning_user");
+    // parses the retrieved user object from a JSON string back into a JavaScript object
     const learningUserObject = JSON.parse(localLearningUser);
+    // updates the currentUser state with the parsed user object
     setCurrentUser(learningUserObject);
   }, []);
 
   return (
     <Routes>
+      {/* The NavBar and Outlet components are rendered for all paths under the root ("/") path. */}
       <Route
         path="/"
         element={
@@ -30,6 +34,7 @@ export const ApplicationViews = () => {
           </>
         }
       >
+        {/* The AllPosts component is rendered for the root ("/") and "home" paths. */}
         <Route index element={<AllPosts />} />
         <Route path="home" element={<AllPosts />} />
         <Route path="newPost" element={<NewPost currentUser={currentUser} />} />

@@ -26,13 +26,18 @@ export const NavBar = () => {
           New Post
         </Link>
       </li>
+
+      {/* Checks localStorage to see if a learning user is logged in */}
       {localStorage.getItem("learning_user") ? (
         <li>
           <Link
             className="navbar-link"
+            // set to an empty string which won't navigate it to another page instead Onclick handles navigation
             to=""
             onClick={() => {
+              // if user is logged in, this line removes the learning user from local storage
               localStorage.removeItem("learning_user");
+              // uses navigate function to redirect user to the login page
               navigate("/login", { replace: true });
             }}
           >
