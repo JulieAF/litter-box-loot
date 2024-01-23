@@ -1,4 +1,3 @@
-
 ## Litter Box Loot
 
 <b style="font-size: 20px;"><i>E-commerce for cats!</i></b>
@@ -52,4 +51,4 @@ cd litter-box-loot
 
 #### Created by Julie Foster
 
-<a href="https://github.com/JulieAF" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Monica Kay GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/julie-angelica-foster/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Julie Foster LinkedIn" style="height: auto !important;width: auto !important;" /></a>
+<a href="https://github.com/JulieAF" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Julie Foster GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/julie-angelica-foster/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Julie Foster LinkedIn" style="height: auto !important;width: auto !important;" /></a>

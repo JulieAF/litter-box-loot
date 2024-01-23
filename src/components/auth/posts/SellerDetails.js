@@ -40,7 +40,7 @@ export const SellerDetails = () => {
           <div className="profile-image">
             <img
               src={
-                sellerProfile?.profiles?.image ||
+                sellerProfile?.profiles[0]?.image ||
                 "https://www.creativefabrica.com/wp-content/uploads/2023/03/16/Kawaii-Cat-Profile-With-Flower-64532988-1.png"
               }
               onError={(e) => {
@@ -57,7 +57,7 @@ export const SellerDetails = () => {
             <div> Email: {sellerProfile?.email}</div>
             <div>
               About:{" "}
-              {sellerProfile?.profiles?.aboutMe ||
+              {sellerProfile?.profiles[0]?.aboutMe ||
                 "Hi! I'm new to Litter Box Loot."}
             </div>
           </div>
